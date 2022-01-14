@@ -1214,14 +1214,6 @@ function t_store_get_productCard_txtAndPrice_html(product, edition, opts, strImg
 function t_store_get_productCard_txt_html(product, edition, opts) {
     var str = ""
       , typoClass = "";
-    if (Object.prototype.hasOwnProperty.call(opts.price, "position") && "at" == opts.price.position && (str += t_store_get_productCard_Price_html(product, edition, opts)),
-    product.title) {
-        typoClass = 4 === parseInt(opts.blocksInRow, 10) ? "t-name_xs" : 2 === parseInt(opts.blocksInRow, 10) ? "t-name_xl" : "t-name_md";
-        var titleFieldAttr = 1 === product.editions.length ? 'field="st_title__' + edition.uid + '" data-redactor-toolbar="no"' : "";
-        str += '<div class="js-store-prod-name js-product-name t-store__card__title t-name ' + typoClass + '" style="' + opts.typo.title + '" ' + titleFieldAttr + ">",
-        str += product.title,
-        str += "</div>"
-    }
     if (Object.prototype.hasOwnProperty.call(opts.price, "position") && "bt" == opts.price.position && (str += t_store_get_productCard_Price_html(product, edition, opts)),
     edition.sku) {
         var skuVisCss, skuColor, skuStyle = 'style="' + (opts.prodCard.showOpts ? "" : "display:none;") + (opts.typo.descrColor ? "color:" + opts.typo.descrColor + ";" : "") + '"', skuFieldAttr = 1 === product.editions.length ? 'field="st_sku__' + edition.uid + '" data-redactor-toolbar="no"' : "";
