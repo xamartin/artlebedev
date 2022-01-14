@@ -1099,6 +1099,7 @@ function t_store_get_productCard_simpleStructure(product, edition, opts, link, i
       , strImg = t_store_get_productCard_img_html(product, opts)
       , str = "";
     return str += link.open,
+    str += "    " + t_store_get_productCard_txtAndPrice_html(product, edition, opts, strImg),
     str += "    " + strImg,
     str += "    " + t_store_get_productCard_txtAndPrice_html(product, edition, opts, strImg),
     str += link.close,
