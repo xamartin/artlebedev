@@ -1243,12 +1243,15 @@ function t_store_get_productCard_txt_html(product, edition, opts) {
 
 
 function t_store_get_productCard_txtAndPrice_html1(product, edition, opts, strImg) {
-    var str = "", removePadStyle;
-    return str += '        <div class="t-store__card__textwrapper" ' + ("" === strImg ? 'style="padding-top:0px;"' : "") + ">",
-    str += "            " + t_store_get_productCard_txt_html1(product, edition, opts),
-    Object.prototype.hasOwnProperty.call(opts.price, "position") && "" != opts.price.position || (str += t_store_get_productCard_Price_html(product, edition, opts)),
-    str += "        </div>"
+    var str = "",
+        removePadStyle;
+    return (
+        (str += '        <div class="t-store__card__textwrapper" ' + ("" === strImg ? 'style="padding-top:0px;"' : "") + ">"),
+        (str += "            " + t_store_get_productCard_txt_html1(product, edition, opts)),
+        (str += "        </div>")
+    );
 }
+
 
 function t_store_get_productCard_txt_html1(product, edition, opts) {
     var str = ""
